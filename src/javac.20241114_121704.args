@@ -1,0 +1,3 @@
+-cp
+".;C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\lib\\struts-core-1.3.10.jar;C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\lib\\servlet-api.jar;C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\lib\\postgresql-42.7.4.jar;C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\myApp\\json-20230618.jar"
+DataBase.java

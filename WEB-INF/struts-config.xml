@@ -1,0 +1,30 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+   "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+   
+<struts-config>
+    <form-beans>
+        <form-bean name="employeeDetailsForm" type="EmployeeDetailsForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action
+            path="/view"
+            type="ViewAction"
+            name="employeeDetailsForm"
+            scope="request"
+            input="/view.jsp">
+            <forward name="success" path="/view.jsp"/>
+        </action>
+
+        <action
+            path="/add"
+            type="AddAction"
+            name="employeeDetailsForm"
+            scope="request"
+			parameter="method"
+            input="/add.jsp">
+            <forward name="success" path="/add.jsp"/>
+			<forward name="view" path="/view.do"/>
+        </action>
+    </action-mappings>
+</struts-config>
