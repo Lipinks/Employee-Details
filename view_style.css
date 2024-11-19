@@ -1,0 +1,32 @@
+body{
+	background-image: url(https://t4.ftcdn.net/jpg/07/23/29/41/360_F_723294151_xl9nkxrmWTUgpmdEIXBQu6j2iE9wqoSN.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+table
+{
+	width:100%;
+}
+
+td{
+	padding-left: 20px;
+}
+
+button
+{
+	position:absolute;
+	top: 15px;
+	right: 50px;
+	height: 30px;
+	width: 200px;
+}
+
+a{
+	text-decoration: none;
+}
+
+h2
+{
+	justify-self:center;
+}
