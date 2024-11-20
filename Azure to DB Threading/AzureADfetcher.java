@@ -23,16 +23,9 @@ class Producer implements Runnable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-			/*
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-			*/
         }
         System.out.println("Producer thread stopped.");
-		return;
+	return;
     }
 }
 
@@ -51,44 +44,8 @@ class Consumer implements Runnable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-			/*
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-			*/
         }
         System.out.println("Consumer thread stopped.");
-		return;
+	return;
     }
 }
-/*
-public class AzureADfetcher {
-    public static void main(String[] args) {
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        Runnable task = () -> {
-            Produce_Consume p_q = new Produce_Consume();
-            try {
-                p_q.accessToken = p_q.getAccessTokenByClientCredentialGrant().accessToken();
-            } catch (Exception e) {
-                e.printStackTrace();
-                return;
-            }
-            new Producer(p_q);
-            new Consumer(p_q);
-			/*
-            while (p_q.shouldRun) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-		
-        };
-
-        scheduler.scheduleAtFixedRate(task, 0, 30, TimeUnit.MINUTES);
-    }
-}
-*/
