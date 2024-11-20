@@ -61,16 +61,8 @@ public class AddHandler {
         if (httpResponseCode == HttpURLConnection.HTTP_CREATED) 
 		{
             try (BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()))) 
-			{
-                String inputLine;
-                StringBuilder response = new StringBuilder();
-                while ((inputLine = in.readLine()) != null) 
-				{
-                    response.append(inputLine);
-                }
-                System.out.println("Response: " + response.toString());
-				success=true;
-				break;
+	    {
+		success=true;
             }
         } 
 		
