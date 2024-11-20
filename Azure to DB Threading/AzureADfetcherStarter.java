@@ -13,22 +13,18 @@ public class AzureADfetcherStarter implements ServletContextListener {
    
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("Starting AzureADFetcher...");
-
-        // Create a scheduler to run the fetcher every 30 minutes
-        //scheduler = Executors.newSingleThreadScheduledExecutor();
-		scheduler = Executors.newScheduledThreadPool(2); // or more
+	scheduler = Executors.newScheduledThreadPool(2);
         scheduler.scheduleAtFixedRate(() -> {
             try {
                 System.out.println("Running AzureADFetcher task...");
                 Produce_Consume p_q = new Produce_Consume();
                 p_q.accessToken = p_q.getAccessTokenByClientCredentialGrant().accessToken();
-
                 new Producer(p_q);
                 new Consumer(p_q);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }, 0, 10, TimeUnit.MINUTES); // Initial delay 0, repeat every 30 minutes
+        }, 0, 30, TimeUnit.MINUTES);
     }
 
    
@@ -36,14 +32,6 @@ public class AzureADfetcherStarter implements ServletContextListener {
         System.out.println("Stopping AzureADFetcher...");
         if (scheduler != null && !scheduler.isShutdown()) {
             scheduler.shutdown();
-            try {
-                if (!scheduler.awaitTermination(10, TimeUnit.SECONDS)) {
-                    System.out.println("Forcing scheduler shutdown...");
-                    scheduler.shutdownNow();
-                }
-            } catch (InterruptedException e) {
-                scheduler.shutdownNow();
-            }
         }
     }
 }
