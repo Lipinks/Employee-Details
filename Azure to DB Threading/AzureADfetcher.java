@@ -1,12 +1,6 @@
-import com.microsoft.aad.msal4j.*;
-import org.json.JSONObject;
-import org.json.JSONArray;
 import java.io.*;
-import java.net.*;
 import java.util.*;
 import java.util.concurrent.*;
-import java.sql.*;
-
 
 class Producer implements Runnable {
     private Produce_Consume p_q;
