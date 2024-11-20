@@ -19,4 +19,7 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 
+	<listener>
+		<listener-class>AzureADfetcherStarter</listener-class>
+	</listener>
 </web-app>
