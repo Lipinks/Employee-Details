@@ -30,8 +30,5 @@ public class AzureADfetcherStarter implements ServletContextListener {
    
     public void contextDestroyed(ServletContextEvent sce) {
         System.out.println("Stopping AzureADFetcher...");
-        if (scheduler != null && !scheduler.isShutdown()) {
-            scheduler.shutdown();
-        }
     }
 }
